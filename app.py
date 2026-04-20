@@ -83,11 +83,11 @@ if menu == "Add Entry":
         """
 
         values = (
-            month, parking_lot, owner_name, aadhar, phone,
-            vehicle_type, car_number, slot_status,
-            start_date, end_date, payment_date,
-            payment_mode, receipt_number, advance_paid,
-            amount_received, late_fee, total_amount, balance, remarks
+        month, parking_lot, owner, aadhar, phone,
+        vehicle, car_no, status,
+        str(start), str(end), str(payment_date),
+        payment_mode, receipt, advance,
+        amount, late_fee, 1100, balance, remarks
         )
 
         cursor.execute(query, values)
