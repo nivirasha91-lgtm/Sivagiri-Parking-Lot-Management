@@ -61,6 +61,16 @@ if menu == "Add Entry":
         conn = get_connection()
         cursor = conn.cursor()
 
+        #query = """
+       # INSERT INTO parking_records (
+    #    month, parking_lot, owner_name, aadhar, phone,
+     #   vehicle_type, car_number, slot_status,
+        #start_date, end_date, payment_date,
+      #  payment_mode, receipt_number, advance_paid,
+      #  amount_received, late_fee, total_amount, balance, remarks
+      #  )
+#VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+     #   """
         query = """
         INSERT INTO parking_records (
         month, parking_lot, owner_name, aadhar, phone,
@@ -69,7 +79,7 @@ if menu == "Add Entry":
         payment_mode, receipt_number, advance_paid,
         amount_received, late_fee, total_amount, balance, remarks
         )
-        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         """
 
         values = (
