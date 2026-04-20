@@ -3,6 +3,26 @@ import pandas as pd
 from db import get_connection
 
 st.title("🚗 Parking Management System")
+# --- LOGIN ---
+def login():
+    st.title("🔐 Login")
+
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    if st.button("Login"):
+        if username == "admin" and password == "1234":
+            st.session_state["logged_in"] = True
+        else:
+            st.error("Invalid credentials")
+
+# Session check
+if "logged_in" not in st.session_state:
+    st.session_state["logged_in"] = False
+
+if not st.session_state["logged_in"]:
+    login()
+    st.stop()
 
 menu = st.sidebar.selectbox("Menu", ["Add Entry", "View Records", "Unpaid Users", "Monthly Report"])
 
